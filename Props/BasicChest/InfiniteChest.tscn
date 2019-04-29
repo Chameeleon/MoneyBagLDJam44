@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Props/BasicChest/sprite_0.png" type="Texture" id=1]
+[ext_resource path="res://Props/BasicChest/InfiniteChest.gd" type="Script" id=2]
+[ext_resource path="res://Noise/Infinity.png" type="Texture" id=3]
+
+[node name="BasicChest" type="Sprite"]
+
+texture = ExtResource( 1 )
+offset = Vector2( 0, -28 )
+script = ExtResource( 2 )
+_sections_unfolded = [ "Offset", "Transform" ]
+
+[node name="Infinity" type="Sprite" parent="." index="0"]
+
+position = Vector2( -10, 16 )
+texture = ExtResource( 3 )
+_sections_unfolded = [ "Transform" ]
+
+
