@@ -1,0 +1,60 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Enemy/Spike/SpikeLeft.gd" type="Script" id=1]
+[ext_resource path="res://Player/Hit/sprite_0.png" type="Texture" id=2]
+[ext_resource path="res://Player/Hit/sprite_1.png" type="Texture" id=3]
+[ext_resource path="res://Player/Hit/sprite_2.png" type="Texture" id=4]
+[ext_resource path="res://Player/Hit/sprite_3.png" type="Texture" id=5]
+[ext_resource path="res://Noise/hit.wav" type="AudioStream" id=6]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 64, 33 )
+
+[sub_resource type="SpriteFrames" id=2]
+
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[node name="Spike" type="Area2D" index="0"]
+
+rotation = -1.57079
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_layer = 0
+collision_mask = 2
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 1 )
+_sections_unfolded = [ "Collision" ]
+
+[node name="Spikeshape" type="CollisionShape2D" parent="." index="0"]
+
+shape = SubResource( 1 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="." index="1"]
+
+position = Vector2( 0, -32.0002 )
+frames = SubResource( 2 )
+animation = "default"
+frame = 3
+_sections_unfolded = [ "Transform" ]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="2"]
+
+stream = ExtResource( 6 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+

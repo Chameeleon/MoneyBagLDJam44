@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/bonus.wav-9995792084326b349baef8d55fec79ec.sample"
+
+[deps]
+
+source_file="res://Noise/bonus.wav"
+dest_files=[ "res://.import/bonus.wav-9995792084326b349baef8d55fec79ec.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0
